@@ -1,27 +1,21 @@
-package Pages.Prestashop;
+package Pages.Prestashop.MainPage;
 
-import Pages.CommonPageObject;
+import Pages.BasePage;
+import Pages.Prestashop.MainPage.ComponentsForMainPage.ProductComponent;
+import Pages.Prestashop.MainPage.ComponentsForMainPage.HeaderComponent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static Pages.Locators.THE_LOADING_OF_ELEMENTS;
-import static Pages.Locators.CURRENCY;
 
-public class PrestashopMainPageObject extends CommonPageObject {
+public class PrestashopMainPageObject extends BasePage {
+    WebElement header;
     private static WebDriverWait wait;
-    int timeOut = 3;
+    int timeOut = 5;
 
-    @FindBy(xpath = CURRENCY)
-    WebElement currency;
-
-    @FindBy(xpath = THE_LOADING_OF_ELEMENTS)
-    WebElement theLoadingOfElements;
-
-    WebElement currencyDropdownMenu;
     WebElement productsList;
 
     public PrestashopMainPageObject(WebDriver driver) {
@@ -29,8 +23,8 @@ public class PrestashopMainPageObject extends CommonPageObject {
         wait = new WebDriverWait(driver, timeOut);
     }
 
-    public CurrencyComponent getCurrency() {
-        return new CurrencyComponent(driver, currencyDropdownMenu);
+    public HeaderComponent getHeader() {
+        return new HeaderComponent(driver, header);
     }
 
     public ProductComponent getProducts() {
@@ -42,7 +36,4 @@ public class PrestashopMainPageObject extends CommonPageObject {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(THE_LOADING_OF_ELEMENTS)));
     }
 
-    public void currencySelector() {
-        currency.click();
-    }
 }
