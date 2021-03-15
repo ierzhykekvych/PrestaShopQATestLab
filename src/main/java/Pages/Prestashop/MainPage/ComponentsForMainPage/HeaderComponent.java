@@ -2,10 +2,12 @@ package Pages.Prestashop.MainPage.ComponentsForMainPage;
 
 import Pages.BasePage;
 import Pages.Text;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static Pages.Locators.*;
@@ -32,7 +34,8 @@ public class HeaderComponent extends BasePage implements Text {
     }
 
     public HeaderComponent currencySelector() {
-        currency.click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(CURRENCY))).click();
+        //currency.click();
         return this;
     }
 

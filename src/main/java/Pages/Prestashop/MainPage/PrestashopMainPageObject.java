@@ -1,6 +1,7 @@
 package Pages.Prestashop.MainPage;
 
 import Pages.BasePage;
+
 import Pages.Prestashop.MainPage.ComponentsForMainPage.ProductComponent;
 import Pages.Prestashop.MainPage.ComponentsForMainPage.HeaderComponent;
 import org.openqa.selenium.By;
@@ -21,6 +22,11 @@ public class PrestashopMainPageObject extends BasePage {
     public PrestashopMainPageObject(WebDriver driver) {
         super(driver);
         wait = new WebDriverWait(driver, timeOut);
+    }
+
+    public PrestashopMainPageObject waitForLoadPage() {
+        waitForAnimation();
+        return this;
     }
 
     public HeaderComponent getHeader() {

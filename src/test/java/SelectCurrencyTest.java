@@ -1,26 +1,21 @@
 import Pages.BaseTest;
-import Pages.Prestashop.MainPage.ComponentsForMainPage.vtextFromBuffer;
+import Pages.Currency;
 import Pages.Prestashop.MainPage.PrestashopMainPageObject;
-import Pages.URLs;
-import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
+import org.testng.annotations.Ignore;
 
-public class SelectCurrencyTest extends BaseTest implements URLs{
-
+public class SelectCurrencyTest extends BaseTest{
+    @Ignore
     @Test
     public void selectCurrencyTest() {
 
-        //WebElement asd = driver.findElement(By.xpath("s"));
+        PrestashopMainPageObject prestashopMainPageObject = new PrestashopMainPageObject(driver);
+        prestashopMainPageObject.waitForAnimation();
 
-        //PrestashopMainPageObject prestashopMainPageObject = new PrestashopMainPageObject(driver);
-        vtextFromBuffer vtext = new vtextFromBuffer(driver);
-        vtext.qwe();
-        /*
         prestashopMainPageObject.checkingTheLoadingOfElements();
-        prestashopMainPageObject.getHeader()
+        prestashopMainPageObject
+                .getHeader()
                 .currencySelector()
                 .getCurrency()
                 .checkingTheLoadingOfEurElements()
@@ -59,9 +54,6 @@ public class SelectCurrencyTest extends BaseTest implements URLs{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-
-         */
 
     }
 }

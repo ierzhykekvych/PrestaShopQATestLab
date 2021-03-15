@@ -21,7 +21,7 @@ public class BaseTest implements URLs {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        //driver.get(PRESTASHOP);
+        driver.get(PRESTASHOP);
     }
 
     @AfterClass

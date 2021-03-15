@@ -24,6 +24,8 @@ public class vtextFromBuffer extends CommonPageObject {
         super(driver);
     }
 
+
+
     public String sad() {
         String result = "";
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();

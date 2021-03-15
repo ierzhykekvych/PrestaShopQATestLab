@@ -22,4 +22,6 @@ public @interface Locators {
     String ADD_TO_CART_BUTTON = "//button[starts-with(@class, 'btn btn-primary') ]";
     String PLUS_ONE_PRODUCT_BUTTON = "//button[@class = \"btn btn-touchspin js-touchspin bootstrap-touchspin-up\"]";
     String SELECT_COLOR_BUTTONS = "//ul/li[@class = \"pull-xs-left input-container\"]";
+    String SIGN_IN = "//div[@class = \"gb_Lf\"]/a[@class = \"gb_be gb_4 gb_5c\"]";
+    String EMAIL_FIELD = "//input[@type = \"email\"]";
 }

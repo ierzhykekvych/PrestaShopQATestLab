@@ -2,6 +2,6 @@ package Pages;
 
 public enum Currency {
     EUR,
-    UAS,
+    USD,
     UAH;
 }
